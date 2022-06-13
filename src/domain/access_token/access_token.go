@@ -1,6 +1,7 @@
 package accesstoken
 
 import (
+	"Gone/src/utils/errors"
 	"time"
 )
 
@@ -13,6 +14,10 @@ type AccessToken struct {
 	UserId      int64  `json: "user_id"`
 	ClientId    int64  `json: "client_id"`
 	Expires     int64  `json: "expires"`
+}
+
+type Repository interface {
+	GetById(string) (*AccessToken, *errors.RestError)
 }
 
 func GetNewAccessToken() AccessToken {

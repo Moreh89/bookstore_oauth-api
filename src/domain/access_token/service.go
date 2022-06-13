@@ -1,8 +1,7 @@
 package accesstoken
 
 import (
-	// "Gone/src/utils/errors"
-	"github.com/Moreh89/bookstore_oauth-api/utils/errors"
+	"Gone/src/utils/errors"
 )
 
 type Service interface {
@@ -10,10 +9,13 @@ type Service interface {
 }
 
 type service struct {
+	repository Repository
 }
 
-func NewService() Service {
-	return &service{}
+func NewService(repo Repository) Service {
+	return &service{
+		repository: repo,
+	}
 }
 
 func (s *service) GetById(string) (*AccessToken, *errors.RestError) {
