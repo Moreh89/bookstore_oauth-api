@@ -2,7 +2,6 @@ package main
 
 import "Gone/src/app"
 
-func main()
-{
+func main() {
 	app.StartApplication()
 }

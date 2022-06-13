@@ -16,6 +16,6 @@ func NewRepository() DbRepository {
 	return &dbRepository{}
 }
 
-func (r *dbRepository) 	GetById(id string) (*accesstoken.AccessToken, *errors.RestError){
-	return nil, nil
+func (r *dbRepository) GetById(id string) (*accesstoken.AccessToken, *errors.RestError) {
+	return nil, errors.NewInternalServerError("database connection not implemented yet")
 }
